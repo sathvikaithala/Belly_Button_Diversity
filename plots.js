@@ -45,28 +45,33 @@ function init() {
 
   function buildCharts(sample){
     d3.json("samples.json").then((data)=>{
+      var metadata = data.metadata;
+      var resultArray = metadata.filter(sampleObj => sampleObj.id == sample);
+      var result = resultArray[0];
+        
+      // build bar plot
 
-        // build bar plot
-        var sortedSpecies = data.sort((a,b) =>
+
+      var sortedSpecies = result.sort((a,b) =>
             a.sample_values - b.sample_values).reverse(); 
 
-        var topTenSpecies = sortedSpecies.slice(0,10);
+      var topTenSpecies = sortedSpecies.slice(0,10);
 
-        var topTenSpeciesNames = topTenSpecies.map(species => species.otu_ids);
-        var topTenSpeciesValues = topTenSpecies.map(species => parseInt(species.sample_values));
+      var topTenSpeciesNames = topTenSpecies.map(species => species.otu_ids);
+      var topTenSpeciesValues = topTenSpecies.map(species => parseInt(species.sample_values));
 
-        var trace = {
+      var trace = {
             x: topTenSpeciesNames,
             y: topTenSpeciesValues,
             type: "bar"
           };
-        var data = [trace];
-        var layout = {
+      var data = [trace];
+      var layout = {
             title: "Top Ten Bacteria Species",
             xaxis: { title: "Species" },
             yaxis: { title: "Sample Values"}
           };
-        Plotly.newPlot("bar", data, layout);
+      Plotly.newPlot("bar", data, layout);
 
 
         // build bubble plot
