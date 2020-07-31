@@ -47,13 +47,13 @@ function init() {
     
     d3.json("samples.json").then((data)=>{
       var samples = data.samples;
-      var resultArray = samples.filter(sampleObj => sampleObj.otu_ids == sample);
-      var result = resultArray[0];
+      //var resultArray = samples.filter(sampleObj => sampleObj.otu_ids == sample);
+      //var result = resultArray[0];
         
       // build bar plot
 
 
-      var sortedSpecies = result.sort((a,b) =>
+      var sortedSpecies = samples.sort((a,b) =>
             a.sample_values - b.sample_values).reverse(); 
 
       var topTenSpecies = sortedSpecies.slice(0,10);
