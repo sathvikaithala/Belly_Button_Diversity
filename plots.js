@@ -66,13 +66,14 @@ function init() {
             y: topTenSpeciesValues,
             type: "bar"
           };
-      var data = [trace];
-      var layout = {
+        var data = [trace];
+        var layout = {
             title: "Top Ten Bacteria Species",
             xaxis: { title: "Species" },
             yaxis: { title: "Sample Values"}
           };
-      Plotly.newPlot("bar", data, layout);
+      
+        Plotly.newPlot("bar", data, layout);
 
 
         // build bubble plot
