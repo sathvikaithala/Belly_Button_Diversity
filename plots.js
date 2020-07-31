@@ -103,3 +103,4 @@ Gauge chart:
     To plot the weekly washing frequency of the individual. 
     You will need to modify the example gauge code to account for values ranging from 0 through 9. 
     Update the chart whenever a new sample is selected.
+    */
