@@ -44,15 +44,16 @@ function init() {
   }
 
   function buildCharts(sample){
+    
     d3.json("samples.json").then((data)=>{
-      var metadata = data.metadata;
-      var resultArray = metadata.filter(sampleObj => sampleObj.id == sample);
-      var result = resultArray[0];
+      //var metadata = data.metadata;
+      //var resultArray = metadata.filter(sampleObj => sampleObj.id == sample);
+      //var result = resultArray[0];
         
       // build bar plot
 
 
-      var sortedSpecies = result.sort((a,b) =>
+      var sortedSpecies = sample.sort((a,b) =>
             a.sample_values - b.sample_values).reverse(); 
 
       var topTenSpecies = sortedSpecies.slice(0,10);
