@@ -52,19 +52,19 @@ function init() {
 
         var topTenSpecies = sortedSpecies.slice(0,10);
 
-        var topTenSpeciesNames = topTenSpecies.map(city => city.City);
-        var topTenSpeciesValues = topTenSpecies.map(city => parseInt(city.Increase_from_2016));
+        var topTenSpeciesNames = topTenSpecies.map(species => species.otu_ids);
+        var topTenSpeciesValues = topTenSpecies.map(species => parseInt(species.sample_values));
 
         var trace = {
-            x: topFiveCityNames,
-            y: topFiveCityGrowths,
+            x: topTenSpeciesNames,
+            y: topTenSpeciesValues,
             type: "bar"
           };
         var data = [trace];
         var layout = {
             title: "Top Ten Bacteria Species",
-            xaxis: { title: "City" },
-            yaxis: { title: "Population Growth, 2016-2017"}
+            xaxis: { title: "Species" },
+            yaxis: { title: "Sample Values"}
           };
         Plotly.newPlot("bar", data, layout);
 
@@ -72,7 +72,7 @@ function init() {
         // build bubble plot
 
 
-        var PANEL = d3.select("#gauge");
+        // var PANEL = d3.select("#gauge");
         // build gauge plot
     })
 
