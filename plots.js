@@ -47,6 +47,7 @@ function init() {
     
     d3.json("samples.json").then((data)=>{
       var samples = data.samples;
+      console.log(samples)
       //var resultArray = samples.filter(sampleObj => sampleObj.otu_ids == sample);
       //var result = resultArray[0];
         
