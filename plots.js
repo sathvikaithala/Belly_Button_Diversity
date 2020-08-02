@@ -16,11 +16,7 @@ function init() {
   })}
   
 
-  // build chart when the requested dataset is selected
-  function optionChanged(newSample) {
-    buildMetadata(newSample);
-    buildCharts(newSample);
-  }
+
 
   // define buildMetadata
   function buildMetadata(sample) {
@@ -112,6 +108,11 @@ function init() {
 
   }
 
+  // build chart when the requested dataset is selected
+  function optionChanged(newSample) {
+    buildMetadata(newSample);
+    buildCharts(newSample);
+  }
   init(); // initialize the page after running everything
 
 /*
