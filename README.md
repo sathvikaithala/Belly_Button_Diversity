@@ -4,7 +4,7 @@ UC Berkeley Extension Data Analytics Boot Camp Module 12
 
 ---
 
-View the dashboard on my [GitHub.io Website](https://www.sathvikaithala.github.io/Belly_Button_Diversity)!
+View the dashboard on my [GitHub.io Website](https://sathvikaithala.github.io/Belly_Button_Diversity/)!
 
 ### Objective:
 
