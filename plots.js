@@ -124,7 +124,7 @@ function buildCharts(sample){
       Gauge chart:
       To plot the weekly washing frequency of the individual. 
       You will need to modify the example gauge code to account for values ranging from 0 through 9. 
-      Update the chart whenever a new sample is selected.
+      Update the chart whenever a new sample is selected. */
       
 
 
@@ -132,25 +132,26 @@ function buildCharts(sample){
       var resultArrayMD = metadata.filter(sampleObj=>sampleObj.id==sample);
       var resultMD = resultArrayMD[0];
      
-      console.log(resultMD.wfreq);
+      console.log("wash freq" + resultMD.wfreq);
 
       var gaugetrace = {
         domain={x:[0,1],y:[0,1]},
         value = resultMD.wfreq,
         title: {text:"Belly Button Washing Frequency (Times Per Week)"},
-        type: 'indicator',
-        mode:'gauge+number'
+        type: "indicator",
+        mode: "gauge+number"
+        // gauge:{axis:{range:[0,9]}}
 
       };
 
       var gaugedata = [gaugetrace];
 
-      gaugelayout = {
-        width: 600,
-        height: 500
-      };
+      /* gaugelayout = {
+        width: 300,
+        height: 200
+      }; */
 
-      Plotly.newPlot('gauge',gaugedata,gaguelayout); */
+      Plotly.newPlot('gauge',gaugedata); 
     
      
     })
