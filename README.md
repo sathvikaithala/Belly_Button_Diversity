@@ -13,7 +13,7 @@ In this module, we were tasked with creating a dashboard that displays informati
 
 ### Overview:
 
-The user is able to select one of the many ID numbers in the dropdown list to 
+The user is able to select one of the many ID numbers in the dropdown list to view their associated belly button bacteria makeup.
 
 The page will load three charts, as well as a table that displays demographic data for the selected ID number. 
 
@@ -27,6 +27,8 @@ The page will load three charts, as well as a table that displays demographic da
 
 ### Sample:
 
-Here is an example of the dashboard, showing the results for ID #1238.
+Here is an example of the dashboard, showing the results for ID #956.
 
-![ID 1238](images/sample.png)
+![ID 956](images/sample.png)
+
+
