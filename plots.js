@@ -85,7 +85,7 @@ function buildCharts(sample){
 
       var bardata = [bartrace];
       var layout = {
-            title: "Top Ten Bacteria Species",
+            title: "<b>Top Ten Bacteria Species</b>",
             xaxis: { title: "Species" },
             yaxis: { title: "Sample Values"}
       };
@@ -114,8 +114,13 @@ function buildCharts(sample){
       };
 
       var bubdata = [bubtrace];
+      var bublayout = {
+        title: "<b>Relative Frequency of Bacteria Species</b>",
+        xaxis: { title: "Species" },
+        yaxis: { title: "Frequency"}
+      }
 
-      Plotly.newPlot('bubble',bubdata);
+      Plotly.newPlot('bubble',bubdata,bublayout);
 
 
 
