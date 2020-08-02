@@ -142,10 +142,13 @@ function buildCharts(sample){
         mode: "gauge+number",
         gauge: {
           axis: {range:[0,10]},
-          bar:{color:'rgb(192,0,0)'},
+          bar:{color:'rgb(128,128,128)'},
           steps:[
-            {range:[4,6],color:"lightgray"},
-            {range:[7,10],color:"gray"}
+            {range:[0,2],color:'rgb(255,204,204)'},
+            {range:[2,4],color:'rgb(255,229,204)'},
+            {range:[4,6],color:'rgb(255,255,204)'},
+            {range:[6,8],color:'rgb(229,225,204)'},
+            {range:[8,10],color:'rgb(204,255,204)'}
           ]
         }
 
