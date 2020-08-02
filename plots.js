@@ -3,7 +3,7 @@
 // Select data/ID from dropdown list
 function init() {
     var selector = d3.select("#selDataset");
-  
+    var options;
     d3.json("samples.json").then((data) => {
       console.log(data);
       var sampleNames = data.names;
@@ -14,7 +14,7 @@ function init() {
           .property("value", sample);
     });
 
-    //optionChanged(document.getElementById("selDataset").options[0].value);
+    optionChanged(document.getElementById("selDataset").options[0].value);
 })}
   
 // define buildMetadata
@@ -41,9 +41,9 @@ function buildCharts(sample){
     var samples;
     d3.json("samples.json").then((data)=>{
       
-      var metadata = data.metadata;
+      /*var metadata = data.metadata;
       var resultArrayMD = metadata.filter(sampleObj=>sampleObj.id==sample);
-      var resultMD = resultArrayMD[0];
+      var resultMD = resultArrayMD[0]; */
       
       
       var samples = data.samples;
@@ -75,21 +75,20 @@ function buildCharts(sample){
 
       // Bar chart:
 
-      var trace = {
+      var bartrace = {
             x: tenVals.reverse(),
             y: tenLabs.reverse(),
             type: "bar",
-            // orientation: 'h'
       };
 
-      var data = [trace];
+      var bardata = [bartrace];
       var layout = {
             title: "Top Ten Bacteria Species",
             xaxis: { title: "Species" },
             yaxis: { title: "Sample Values"}
       };
       
-      Plotly.newPlot("bar", data, layout);
+      Plotly.newPlot("bar", bardata, layout);
 
 
       /*
@@ -101,7 +100,7 @@ function buildCharts(sample){
       Use otu_labels for the text values.
       */ 
       
-      var trace = {
+      var bubtrace = {
         x: otu_ids,
         y: sampleVals,
         text: otuLabs,
@@ -112,9 +111,9 @@ function buildCharts(sample){
         }
       };
 
-      var data = [trace];
+      var bubdata = [bubtrace];
 
-      Plotly.newPlot('bubble',data);
+      Plotly.newPlot('bubble',bubdata);
 
 
 
@@ -124,7 +123,7 @@ function buildCharts(sample){
       To plot the weekly washing frequency of the individual. 
       You will need to modify the example gauge code to account for values ranging from 0 through 9. 
       Update the chart whenever a new sample is selected.
-      
+      */
 
 
       var metadata = data.metadata;
@@ -133,10 +132,24 @@ function buildCharts(sample){
      
       console.log(resultMD.wfreq);
 
-      
+      var gaugetrace = {
+        domain={x:[0,1],y:[0,1]},
+        value = resultMD.wfreq,
+        title: {text:"Belly Button Washing Frequency (Times Per Week)"},
+        type: 'indicator',
+        mode:'gague+number'
 
-      Plotly.newPlot('gauge',data,layout);
-        */
+      };
+
+      var gaugedata = [gaugetrace];
+
+      gaugelayout = {
+        width: 600,
+        height: 500
+      };
+
+      Plotly.newPlot('gauge',gaugedata,gaguelayout);
+    
      
     })
 

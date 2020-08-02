@@ -26,4 +26,7 @@ The page will load three charts, as well as a table that displays demographic da
 ---
 
 ### Sample:
-![ID 950](images/sample.png)
+
+Here is an example of the dashboard, showing the results for ID #1238.
+
+![ID 1238](images/sample.png)
