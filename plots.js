@@ -156,12 +156,12 @@ function buildCharts(sample){
 
       var gaugedata = [gaugetrace];
 
-      /*gaugelayout = {
-        width: 450,
-        height: 450
-      };*/
+      gaugelayout = {
+        width: 350,
+        height: 350
+      };
 
-      Plotly.newPlot('gauge',gaugedata); 
+      Plotly.newPlot('gauge',gaugedata, gaugelayout); 
     
      
     })
@@ -177,22 +177,3 @@ function optionChanged(newSample) {
 
 init(); // initialize the page after running everything
 
-/*
-  Bar chart: When an individual’s ID is selected, the top 10 bacterial species (OTUs) should be visualized with a bar chart. Create a horizontal bar chart to display the top 10 OTUs found in that individual.
-    Use sample_values as the values for the bar chart.
-    Use otu_ids as the labels for the bar chart.
-    Use otu_labels as the hover text for the chart.
-
-
-Create a bubble chart that displays each sample:
-    Use otu_ids for the x-axis values.
-    Use sample_values for the y-axis values.
-    Use sample_values for the marker size.
-    Use otu_ids for the marker colors.
-    Use otu_labels for the text values. 
-
-Gauge chart:
-    To plot the weekly washing frequency of the individual. 
-    You will need to modify the example gauge code to account for values ranging from 0 through 9. 
-    Update the chart whenever a new sample is selected.
-    */
