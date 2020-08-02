@@ -117,7 +117,9 @@ function buildCharts(sample){
       var bublayout = {
         title: "<b>Relative Frequency of Bacteria Species</b>",
         xaxis: { title: "Species" },
-        yaxis: { title: "Frequency"}
+        yaxis: { title: "Frequency"},
+        width: 768,
+        height: 600
       }
 
       Plotly.newPlot('bubble',bubdata,bublayout);
