@@ -118,7 +118,6 @@ function buildCharts(sample){
         title: "<b>Relative Frequency of Bacteria Species</b>",
         xaxis: { title: "Species" },
         yaxis: { title: "Frequency"},
-        width: 1000,
         height: 600
       }
 
