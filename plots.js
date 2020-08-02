@@ -79,7 +79,7 @@ function buildCharts(sample){
             x: tenVals.reverse(),
             y: tenLabs.reverse(),
             type: "bar",
-            orientation = 'h'
+            orientation: 'h'
       };
 
       var data = [trace];
