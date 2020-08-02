@@ -75,18 +75,19 @@ function buildCharts(sample){
 
       // Bar chart:
 
-      var trace = { // all need to be reversed to accurately show top 10
+      var trace = {
             x: tenVals.reverse(),
             y: tenLabs.reverse(),
             type: "bar",
             orientation = 'h'
-          };
+      };
+
       var data = [trace];
       var layout = {
             title: "Top Ten Bacteria Species",
             xaxis: { title: "Species" },
             yaxis: { title: "Sample Values"}
-          };
+      };
       
       Plotly.newPlot("bar", data, layout);
 
