@@ -47,37 +47,51 @@ function init() {
     
     d3.json("samples.json").then((data)=>{
       var samples = data.samples;
-      console.log(samples)
-      //var resultArray = samples.filter(sampleObj => sampleObj.otu_ids == sample);
-      //var result = resultArray[0];
+      // console.log(samples) // testing to see if code works
+      var resultArray = samples.filter(sampleObj => sampleObj.id == sample);
+      var result = resultArray[0];
         
-      // build bar plot
+      /* getting first ten otu's per id (for bar chart)
+      Bar chart: When an individual’s ID is selected, the top 10 bacterial species (OTUs) should be visualized with a bar chart. Create a horizontal bar chart to display the top 10 OTUs found in that individual.
+      Use sample_values as the values for the bar chart.
+      Use otu_ids as the labels for the bar chart.
+      Use otu_labels as the hover text for the chart.
+      */
+      
+      let otuIds = result.otu_ids; // selecting list of species for selected ID (for labels)
 
+      let tenSpecies = otuIds.slice(0,10); // taking first 10 in array 
 
-      var sortedSpecies = samples.sort((a,b) =>
-            a.sample_values - b.sample_values).reverse(); 
+      let sampleVals = result.sample_values; // getting sample value sizes for selected id
 
-      var topTenSpecies = sortedSpecies.slice(0,10);
+      let tenVals = sampleVals.slice(0,10); // getting top ten sample sizes (for values of bar chart)
 
-      var topTenSpeciesNames = topTenSpecies.map(species => species.otu_ids);
-      var topTenSpeciesValues = topTenSpecies.map(species => parseInt(species.sample_values));
+      let otuLabels = result.otu_labels; // getting labels
 
-      var trace = {
-            x: topTenSpeciesNames,
-            y: topTenSpeciesValues,
+      let tenOtuLabels = tenSpecies.map(otu => "OTU" + otu); // getting top ten labels
+
+      // build each chart
+
+      // Bar chart:
+
+      var trace = { // all need to be reversed to accurately show top 10
+            x: tenVals.reverse(),
+            y: tenOtuLabels.reverse(),
             type: "bar"
           };
-        var data = [trace];
-        var layout = {
+      var data = [trace];
+      var layout = {
             title: "Top Ten Bacteria Species",
             xaxis: { title: "Species" },
             yaxis: { title: "Sample Values"}
           };
       
-        Plotly.newPlot("bar", data, layout);
+      Plotly.newPlot("bar", data, layout);
 
 
-        // build bubble plot
+        // Bubble plot
+
+      
 
 
         // var PANEL = d3.select("#gauge");
