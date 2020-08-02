@@ -20,8 +20,8 @@ function init() {
 
 
 
-  // define buildMetadata
-  function buildMetadata(sample) {
+// define buildMetadata
+function buildMetadata(sample) {
     d3.json("samples.json").then((data) => { //D3 pulls in entire dataset
       var metadata = data.metadata;
       var resultArray = metadata.filter(sampleObj => sampleObj.id == sample); // then filters it
@@ -38,9 +38,9 @@ function init() {
       PANEL.append("h6").text("Wash Frequency: " + result.wfreq);
 
     });
-  }
+}
 
-  function buildCharts(sample){
+function buildCharts(sample){
     var samples;
     d3.json("samples.json").then((data)=>{
       var samples = data.samples;
@@ -136,13 +136,13 @@ function init() {
     })
 
 
-  }
+}
 
   // build chart when the requested dataset is selected
-  function optionChanged(newSample) {
+function optionChanged(newSample) {
     buildMetadata(newSample);
     buildCharts(newSample);
-  }
+}
 
 init(); // initialize the page after running everything
 
