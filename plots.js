@@ -76,7 +76,8 @@ function init() {
       var trace = { // all need to be reversed to accurately show top 10
             x: tenVals.reverse(),
             y: tenOtuLabels.reverse(),
-            type: "bar"
+            type: "bar",
+            orientation = 'h'
           };
       var data = [trace];
       var layout = {
