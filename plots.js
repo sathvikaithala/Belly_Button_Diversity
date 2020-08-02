@@ -158,7 +158,7 @@ function buildCharts(sample){
 
       gaugelayout = {
         width: 350,
-        height: 350
+        height: 550
       };
 
       Plotly.newPlot('gauge',gaugedata, gaugelayout); 
