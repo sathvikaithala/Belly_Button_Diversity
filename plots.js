@@ -14,12 +14,9 @@ function init() {
           .property("value", sample);
     });
 
-    optionChanged(document.getElementById("selDataset").options[0].value);
+    //optionChanged(document.getElementById("selDataset").options[0].value);
 })}
   
-
-
-
 // define buildMetadata
 function buildMetadata(sample) {
     d3.json("samples.json").then((data) => { //D3 pulls in entire dataset
@@ -43,10 +40,17 @@ function buildMetadata(sample) {
 function buildCharts(sample){
     var samples;
     d3.json("samples.json").then((data)=>{
+      
+      var metadata = data.metadata;
+      var resultArrayMD = metadata.filter(sampleObj=>sampleObj.id==sample);
+      var resultMD = resultArrayMD[0];
+      
+      
       var samples = data.samples;
       // console.log(samples) // testing to see if code works
       var resultArray = samples.filter(sampleObj => sampleObj.id == sample);
       var result = resultArray[0];
+      console.log(result);
 
       /* getting first ten otu's per id (for bar chart)
       Bar chart: When an individual’s ID is selected, the top 10 bacterial species (OTUs) should be visualized with a bar chart. Create a horizontal bar chart to display the top 10 OTUs found in that individual.
@@ -55,17 +59,17 @@ function buildCharts(sample){
       Use otu_labels as the hover text for the chart.
       */
       
-      let list_otu_ids = result.otu_ids; // selecting list of species for selected ID (for labels)
+      let otu_ids = result.otu_ids; // selecting list of species for selected ID (for labels)
 
-      let ten_otu = list_otu_ids.slice(0,10); // taking first 10 in array 
+      let tenOtu = otu_ids.slice(0,10); // taking first 10 in array 
 
-      let sample_vals = result.sample_values; // getting sample value sizes for selected id
+      let sampleVals = result.sample_values; // getting sample value sizes for selected id
 
-      let ten_vals = sampleVals.slice(0,10); // getting top ten sample sizes (for values of bar chart)
+      let tenVals = sampleVals.slice(0,10); // getting top ten sample sizes (for values of bar chart)
 
-      let otu_labs = result.otu_labels; // getting labels
+      let otuLabs = result.otu_labels; // getting labels
 
-      let ten_labs = tenSpecies.map(otu => "OTU" + otu); // getting top ten labels
+      let tenLabs = tenOtu.map(otu => "OTU" + otu); // getting top ten labels
 
       // build each chart
 
@@ -73,7 +77,7 @@ function buildCharts(sample){
 
       var trace = { // all need to be reversed to accurately show top 10
             x: tenVals.reverse(),
-            y: tenOtuLabels.reverse(),
+            y: tenLabs.reverse(),
             type: "bar",
             orientation = 'h'
           };
@@ -97,13 +101,13 @@ function buildCharts(sample){
       */ 
       
       var trace = {
-        x: list_otu_ids,
-        y: sample_vals,
-        text: otu_labs,
+        x: otu_ids,
+        y: sampleVals,
+        text: otuLabs,
         mode: 'markers',
         marker:{
-          color: list_otu_ids,
-          size: sample_vals,
+          color: otu_ids,
+          size: sampleVals,
         }
       };
 
