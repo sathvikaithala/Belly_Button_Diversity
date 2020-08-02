@@ -143,7 +143,8 @@ function init() {
     buildMetadata(newSample);
     buildCharts(newSample);
   }
-  init(); // initialize the page after running everything
+
+init(); // initialize the page after running everything
 
 /*
   Bar chart: When an individual’s ID is selected, the top 10 bacterial species (OTUs) should be visualized with a bar chart. Create a horizontal bar chart to display the top 10 OTUs found in that individual.
