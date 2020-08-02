@@ -15,7 +15,6 @@ function init() {
       });
   })}
   
-  init();
 
   // build chart when the requested dataset is selected
   function optionChanged(newSample) {
@@ -79,28 +78,40 @@ function init() {
             y: tenOtuLabels.reverse(),
             type: "bar"
           };
-      var data = [trace];
+      // var data = [trace];
       var layout = {
             title: "Top Ten Bacteria Species",
             xaxis: { title: "Species" },
             yaxis: { title: "Sample Values"}
           };
       
-      Plotly.newPlot("bar", data, layout);
+      Plotly.newPlot("bar", [trace], layout);
 
 
-        // Bubble plot
+      /*
+      Create a bubble chart that displays each sample:
+      Use otu_ids for the x-axis values.
+      Use sample_values for the y-axis values.
+      Use sample_values for the marker size.
+      Use otu_ids for the marker colors.
+      Use otu_labels for the text values.
+      */ 
 
       
 
 
-        // var PANEL = d3.select("#gauge");
-        // build gauge plot
+      /* 
+      Gauge chart:
+      To plot the weekly washing frequency of the individual. 
+      You will need to modify the example gauge code to account for values ranging from 0 through 9. 
+      Update the chart whenever a new sample is selected.
+      */
     })
 
 
   }
 
+  init(); // initialize the page after running everything
 
 /*
   Bar chart: When an individual’s ID is selected, the top 10 bacterial species (OTUs) should be visualized with a bar chart. Create a horizontal bar chart to display the top 10 OTUs found in that individual.
