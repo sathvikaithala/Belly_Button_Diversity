@@ -13,6 +13,8 @@ function init() {
           .text(sample)
           .property("value", sample);
       });
+
+      optionChanged(document.getElementById("selDataset").options[0].value);
   })}
   
 
@@ -39,13 +41,13 @@ function init() {
   }
 
   function buildCharts(sample){
-    
+    var samples;
     d3.json("samples.json").then((data)=>{
       var samples = data.samples;
       // console.log(samples) // testing to see if code works
       var resultArray = samples.filter(sampleObj => sampleObj.id == sample);
       var result = resultArray[0];
-        
+
       /* getting first ten otu's per id (for bar chart)
       Bar chart: When an individual’s ID is selected, the top 10 bacterial species (OTUs) should be visualized with a bar chart. Create a horizontal bar chart to display the top 10 OTUs found in that individual.
       Use sample_values as the values for the bar chart.
@@ -93,8 +95,23 @@ function init() {
       Use otu_ids for the marker colors.
       Use otu_labels for the text values.
       */ 
-
       
+      var trace = {
+        x: list_otu_ids,
+        y: sample_vals,
+        text: otu_labs,
+        mode: 'markers',
+        marker:{
+          color: list_otu_ids,
+          size: sample_vals,
+        }
+      };
+
+      var data = [trace];
+
+      Plotly.newPlot('bubble',data);
+
+
 
 
       /* 
@@ -102,7 +119,20 @@ function init() {
       To plot the weekly washing frequency of the individual. 
       You will need to modify the example gauge code to account for values ranging from 0 through 9. 
       Update the chart whenever a new sample is selected.
-      */
+      
+
+
+      var metadata = data.metadata;
+      var resultArrayMD = metadata.filter(sampleObj=>sampleObj.id==sample);
+      var resultMD = resultArrayMD[0];
+     
+      console.log(resultMD.wfreq);
+
+      
+
+      Plotly.newPlot('gauge',data,layout);
+        */
+     
     })
 
 
