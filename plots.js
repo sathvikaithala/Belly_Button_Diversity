@@ -156,12 +156,12 @@ function buildCharts(sample){
 
       var gaugedata = [gaugetrace];
 
-      gaugelayout = {
+      /*gaugelayout = {
         width: 450,
         height: 450
-      };
+      };*/
 
-      Plotly.newPlot('gauge',gaugedata, gaugelayout); 
+      Plotly.newPlot('gauge',gaugedata); 
     
      
     })
