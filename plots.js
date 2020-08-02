@@ -12,10 +12,10 @@ function init() {
           .append("option")
           .text(sample)
           .property("value", sample);
-      });
+    });
 
-      optionChanged(document.getElementById("selDataset").options[0].value);
-  })}
+    optionChanged(document.getElementById("selDataset").options[0].value);
+})}
   
 
 
