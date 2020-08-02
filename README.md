@@ -6,9 +6,12 @@ UC Berkeley Extension Data Analytics Boot Camp Module 12
 
 View the dashboard on my [GitHub.io Website](https://sathvikaithala.github.io/Belly_Button_Diversity/)!
 
+---
+
 ### Objective:
 
 In this module, we were tasked with creating a dashboard that displays information about the top ten bacteria species in a person's belly button, along with other information related to that individual. 
+
 ---
 
 ### Overview:
