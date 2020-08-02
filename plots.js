@@ -57,17 +57,17 @@ function init() {
       Use otu_labels as the hover text for the chart.
       */
       
-      let otuIds = result.otu_ids; // selecting list of species for selected ID (for labels)
+      let otu_ids = result.otu_ids; // selecting list of species for selected ID (for labels)
 
-      let tenSpecies = otuIds.slice(0,10); // taking first 10 in array 
+      let ten_otu = otu_ids.slice(0,10); // taking first 10 in array 
 
-      let sampleVals = result.sample_values; // getting sample value sizes for selected id
+      let sample_vals = result.sample_values; // getting sample value sizes for selected id
 
-      let tenVals = sampleVals.slice(0,10); // getting top ten sample sizes (for values of bar chart)
+      let ten_vals = sampleVals.slice(0,10); // getting top ten sample sizes (for values of bar chart)
 
-      let otuLabels = result.otu_labels; // getting labels
+      let otu_labs = result.otu_labels; // getting labels
 
-      let tenOtuLabels = tenSpecies.map(otu => "OTU" + otu); // getting top ten labels
+      let ten_labs = tenSpecies.map(otu => "OTU" + otu); // getting top ten labels
 
       // build each chart
 
@@ -78,14 +78,14 @@ function init() {
             y: tenOtuLabels.reverse(),
             type: "bar"
           };
-      // var data = [trace];
+      var data = [trace];
       var layout = {
             title: "Top Ten Bacteria Species",
             xaxis: { title: "Species" },
             yaxis: { title: "Sample Values"}
           };
       
-      Plotly.newPlot("bar", [trace], layout);
+      Plotly.newPlot("bar", data, layout);
 
 
       /*
