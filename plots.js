@@ -135,12 +135,12 @@ function buildCharts(sample){
       console.log("wash freq" + resultMD.wfreq);
 
       var gaugetrace = {
-        domain:{x:[0,9],y:[0,1]},
+        domain:{x:[0,1],y:[0,1]},
         value: resultMD.wfreq,
-        title: {text:"Belly Button Washing Frequency (Times Per Week)"},
+        title: {text:"Belly Button Washing Frequency"},
+        subtitle:{text:"(Times Per Week)"},
         type: "indicator",
         mode: "gauge+number"
-        
 
       };
 
