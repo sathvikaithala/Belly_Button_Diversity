@@ -135,23 +135,23 @@ function buildCharts(sample){
       console.log("wash freq" + resultMD.wfreq);
 
       var gaugetrace = {
-        domain:{x:[0,1],y:[0,1]},
+        domain:{x:[0,9],y:[0,1]},
         value: resultMD.wfreq,
         title: {text:"Belly Button Washing Frequency (Times Per Week)"},
         type: "indicator",
         mode: "gauge+number"
-        // gauge:{axis:{range:[0,9]}}
+        
 
       };
 
       var gaugedata = [gaugetrace];
 
-      /* gaugelayout = {
-        width: 300,
-        height: 200
-      }; */
+      gaugelayout = {
+        width: 400,
+        height: 400
+      };
 
-      Plotly.newPlot('gauge',gaugedata); 
+      Plotly.newPlot('gauge',gaugedata, gaugelayout); 
     
      
     })
