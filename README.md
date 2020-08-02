@@ -1,37 +1,24 @@
-## Welcome to GitHub Pages
+# Belly Button Biodiversity
+UC Berkeley Extension Data Analytics Boot Camp Module 12
+---
 
-You can use the [editor on GitHub](https://github.com/sathvikaithala/Belly_Button_Diversity/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
+<i>Website: sathvikaithala.github.io/Belly_Button_Diversity</i>
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+## Objective:
 
-### Markdown
+In this module, we were tasked with creating a dashboard that displays information about the top ten bacteria species in a person's belly button, along with other information related to that individual. 
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+### Overview:
 
-```markdown
-Syntax highlighted code block
+The user is able to select one of the many ID numbers in the dropdown list to 
 
-# Header 1
-## Header 2
-### Header 3
+The page will load three charts, as well as a table that displays demographic data for the selected ID number. 
 
-- Bulleted
-- List
+- The bar chart will display the top ten bacteria species, and the amount of each that is present within the sample.
 
-1. Numbered
-2. List
+- The gauge chart will show the frequency of belly button washings the sample reported, ranging from 0 to 9 washes per week.
 
-**Bold** and _Italic_ and `Code` text
+- The bubble plot displays the relative frequency of each bacterial species found in the belly button. 
 
-[Link](url) and ![Image](src)
-```
-
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/sathvikaithala/Belly_Button_Diversity/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+### Sample:
+![ID 950](images/sample.png)

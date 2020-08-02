@@ -53,9 +53,9 @@ function init() {
       Use otu_labels as the hover text for the chart.
       */
       
-      let otu_ids = result.otu_ids; // selecting list of species for selected ID (for labels)
+      let list_otu_ids = result.otu_ids; // selecting list of species for selected ID (for labels)
 
-      let ten_otu = otu_ids.slice(0,10); // taking first 10 in array 
+      let ten_otu = list_otu_ids.slice(0,10); // taking first 10 in array 
 
       let sample_vals = result.sample_values; // getting sample value sizes for selected id
 
