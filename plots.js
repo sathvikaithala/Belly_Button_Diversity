@@ -140,7 +140,14 @@ function buildCharts(sample){
         title: "<b>Belly Button Wash Frequency</b><br>(Times Per Week)</br>",
         type: "indicator",
         mode: "gauge+number",
-        gauge: {axis: {range:[0,9]},}
+        gauge: {
+          axis: {range:[0,10]},
+          bar:{color:'rgb(192,0,0)'},
+          steps:[
+            {range:[4,6],color:"lightgray"},
+            {range:[7,10],color:"gray"}
+          ]
+        }
 
       };
 
