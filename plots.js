@@ -139,7 +139,8 @@ function buildCharts(sample){
         value: resultMD.wfreq,
         title: "<b>Belly Button Wash Frequency</b><br>(Times Per Week)</br>",
         type: "indicator",
-        mode: "gauge+number"
+        mode: "gauge+number",
+        gauge: {axis: {range:[0,9]},}
 
       };
 
