@@ -79,7 +79,8 @@ function buildCharts(sample){
             x: tenVals.reverse(),
             y: tenLabs.reverse(),
             type: "bar",
-            orientation: 'h'
+            orientation: 'h',
+            marker: {color: 'rgb(192,0,0)'}
       };
 
       var bardata = [bartrace];
