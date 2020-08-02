@@ -137,8 +137,7 @@ function buildCharts(sample){
       var gaugetrace = {
         domain:{x:[0,1],y:[0,1]},
         value: resultMD.wfreq,
-        title: {text:"Belly Button Washing Frequency"},
-        subtitle:{text:"(Times Per Week)"},
+        title: "<b>Belly Button Wash Frequency</b><br>(Times Per Week)</br>",
         type: "indicator",
         mode: "gauge+number"
 
@@ -147,8 +146,8 @@ function buildCharts(sample){
       var gaugedata = [gaugetrace];
 
       gaugelayout = {
-        width: 400,
-        height: 400
+        width: 450,
+        height: 450
       };
 
       Plotly.newPlot('gauge',gaugedata, gaugelayout); 
